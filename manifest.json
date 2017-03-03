@@ -1,0 +1,27 @@
+   {
+  "name": "WG21 Links",
+
+  "version": "1.0",
+  "description": "Helping to find committee papers and issues for fun and profit!",
+  "permissions": [
+    "tabs", "activeTab", "http://*/*", "https://*/*"
+  ],
+
+  "browser_action": {
+      "default_title": "WG21 Links",
+      "default_popup": "wg21link.html",
+      "default_icon": "cpp.png"
+  },
+
+  "content_scripts" : [
+    {
+      "matches" : ["*://*/*", "file://*/*"],
+      "js" : ["wg21link.js"],
+      "run_at" : "document_end",
+      "all_frames" : false
+    }
+  ],
+
+  "manifest_version": 2
+}
+
