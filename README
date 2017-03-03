@@ -1,6 +1,6 @@
-This extension does a simple gropu of regex on the text components of your page 
+This extension does a simple group of regex on the text components of your page 
 when loaded. For text found looking like WG21 issue numbers or paper numbers, a
-link to https://wg21.link/ is generated with the corresponding issue or paper.
+link to https://wg21.link/ is generated for the corresponding issue or paper.
 
 To run the extension from this directory, enable developer mode in chrome and 
 load unpacked extension from the extensions page. Select this directory, and 
