@@ -2,6 +2,9 @@ This extension does a simple group of regex on the text components of your page
 when loaded. For text found looking like WG21 issue numbers or paper numbers, a
 link to https://wg21.link/ is generated for the corresponding issue or paper.
 
+The plugin will also search for stable names and redirect to the current working
+draft for such, via http://eel.is/c++draft
+
 To run the extension from this directory, enable developer mode in chrome and 
 load unpacked extension from the extensions page. Select this directory, and 
 you should be ready to go.
