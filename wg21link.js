@@ -7,7 +7,10 @@ function replaceIssues() {
     if((regs = re.exec(node.textContent))) {
       var parentNodeNotParsed = !node.parentNode.classList.contains('wg21_link');
       var nodeIsAlreadyLink = node.parentNode.tagName == 'A' || node.parentNode.tagName == 'a' || node.tagName == 'A' || node.tagName == 'a';
-      if(parentNodeNotParsed && !nodeIsAlreadyLink) {
+      var nodeIsTextArea = false;
+      if (node.tagName) { nodeIsTextArea = node.tagName.toLowerCase() == 'textarea'; }
+      if (node.parentNode.tagName) { nodeIsTextArea = nodeIsTextArea || node.parentNode.tagName.toLowerCase() == 'textarea'; }
+      if(parentNodeNotParsed && !nodeIsAlreadyLink && !nodeIsTextArea) {
         var match = document.createElement('A');
         match.appendChild(document.createTextNode(regs[0]));
         match.href = 'https://wg21.link/' + regs[1] + 'wg' + regs[2];
@@ -34,7 +37,10 @@ function replacePapers() {
     if((regs = re.exec(node.textContent))) {
       var parentNodeNotParsed = !node.parentNode.classList.contains('wg21_link');
       var nodeIsAlreadyLink = node.parentNode.tagName == 'A' || node.parentNode.tagName == 'a' || node.tagName == 'A' || node.tagName == 'a';
-      if(parentNodeNotParsed && !nodeIsAlreadyLink) {
+      var nodeIsTextArea = false;
+      if (node.tagName) { nodeIsTextArea = node.tagName.toLowerCase() == 'textarea'; }
+      if (node.parentNode.tagName) { nodeIsTextArea = nodeIsTextArea || node.parentNode.tagName.toLowerCase() == 'textarea'; }
+      if(parentNodeNotParsed && !nodeIsAlreadyLink && !nodeIsTextArea) {
         var match = document.createElement('A');
         match.appendChild(document.createTextNode(regs[0]));
         match.href = 'https://wg21.link/' + regs[0];
@@ -61,7 +67,10 @@ function replaceStableNames() {
     if((regs = re.exec(node.textContent))) {
       var parentNodeNotParsed = !node.parentNode.classList.contains('wg21_link');
       var nodeIsAlreadyLink = node.parentNode.tagName == 'A' || node.parentNode.tagName == 'a' || node.tagName == 'A' || node.tagName == 'a';
-      if(parentNodeNotParsed && !nodeIsAlreadyLink) {
+      var nodeIsTextArea = false;
+      if (node.tagName) { nodeIsTextArea = node.tagName.toLowerCase() == 'textarea'; }
+      if (node.parentNode.tagName) { nodeIsTextArea = nodeIsTextArea || node.parentNode.tagName.toLowerCase() == 'textarea'; }
+      if(parentNodeNotParsed && !nodeIsAlreadyLink && !nodeIsTextArea) {
         var match = document.createElement('A');
         match.appendChild(document.createTextNode(regs[0]));
         match.href = 'http://eel.is/c++draft/' + regs[1];
