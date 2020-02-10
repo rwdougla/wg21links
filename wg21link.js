@@ -59,7 +59,7 @@ function replacePapers() {
 }
 
 function replaceStableNames() {
-  var re = /\[([a-zA-Z\.0-9]+)\]/g;
+  var re = /\[([a-zA-Z][a-zA-Z\.0-9]+)\]/g;
   var regs;
 
   var walker = document.createTreeWalker(
